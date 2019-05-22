@@ -1,5 +1,6 @@
 const axios = require("axios");
 const secp256k1 = require("secp256k1");
+const s_b = require("satoshi-bitcoin");
 
 const BTC_API_URL = "https://api.blockcypher.com/v1/bcy/test";
 const BTC_API_TOKEN = "296130378220499ab143192bc8211001";
@@ -39,8 +40,8 @@ module.exports.getFullAddress = address =>
 module.exports.getBalance = address =>
   axios.get(createBtcUrl(`/addrs/${address}/balance`));
 
-const convertToSatoshi = (amount, fromUnit) => {
-  return amount;
+const convertToSatoshi = amount => {
+  return s_b.toSatoshi(amount);
 };
 
 const genTxObj = (inputAddress, outputAddress, satoshiAmount) =>

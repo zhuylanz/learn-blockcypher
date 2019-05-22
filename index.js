@@ -30,7 +30,7 @@ async function transferCoin() {
 	const result = await BTC.transferCoin(
 		address1.address,
 		address2.address,
-		10000,
+		0.1,
 		address1.private
 	);
 
