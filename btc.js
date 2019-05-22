@@ -7,29 +7,21 @@ const createBtcUrl = url => BTC_API_URL + url + "?token=" + BTC_API_TOKEN;
 
 module.exports.createWallet = data =>
   axios.post(createBtcUrl("/wallets"), {
-    params: { token: BTC_API_TOKEN },
     data: data
   });
 
 module.exports.createHDWallet = data =>
   axios.post(createBtcUrl("/wallets/hd"), {
-    params: { token: BTC_API_TOKEN },
     data: data
   });
 
-module.exports.getWallet = name =>
-  axios.get(createBtcUrl(`/wallets/${name}`), {
-    params: { token: BTC_API_TOKEN }
-  });
+module.exports.getWallet = name => axios.get(createBtcUrl(`/wallets/${name}`));
 
 module.exports.getHDWallet = name =>
-  axios.get(createBtcUrl(`/wallets/hd/${name}`), {
-    params: { token: BTC_API_TOKEN }
-  });
+  axios.get(createBtcUrl(`/wallets/hd/${name}`));
 
 module.exports.addAddressToWallet = (name, addresses) =>
   axios.post(createBtcUrl(`/wallets/${name}`), {
-    params: { token: BTC_API_TOKEN },
     data: {
       addresses: addresses
     }
@@ -39,19 +31,13 @@ module.exports.createAddress = () =>
   axios.post(createBtcUrl("/addrs")).then(resp => resp.data);
 
 module.exports.getAddress = address =>
-  axios.get(createBtcUrl(createBtcUrl(`/addrs/${address}`)), {
-    params: { token: BTC_API_TOKEN }
-  });
+  axios.get(createBtcUrl(createBtcUrl(`/addrs/${address}`)));
 
 module.exports.getFullAddress = address =>
-  axios.get(createBtcUrl(createBtcUrl(`/addrs/${address}/full`)), {
-    params: { token: BTC_API_TOKEN }
-  });
+  axios.get(createBtcUrl(createBtcUrl(`/addrs/${address}/full`)));
 
 module.exports.getBalance = address =>
-  axios.get(createBtcUrl(`/addrs/${address}/balance`), {
-    params: { token: BTC_API_TOKEN }
-  });
+  axios.get(createBtcUrl(`/addrs/${address}/balance`));
 
 const convertToSatoshi = (amount, fromUnit) => {
   return amount;
