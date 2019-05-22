@@ -27,13 +27,19 @@ async function getBalance() {
 }
 
 async function transferCoin() {
-	await BTC.transferCoin(
+	const result = await BTC.transferCoin(
 		address1.address,
 		address2.address,
 		10000,
 		address1.private
 	);
+
+	console.log(result);
 }
+
+// BTC.getFund(address1.address)
+// 	.then(data => console.log(data))
+// 	.catch(err => console.log("err", err));
 
 // getBalance();
 // createAddress();

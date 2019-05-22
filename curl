@@ -1,0 +1,1 @@
+curl -d '{"address": "BxSDUtq7GvJ7XXwaXvQd8xiNexgvZXYUbn", "amount": 100000000}' https://api.blockcypher.com/v1/bcy/test/faucet?token=296130378220499ab143192bc8211001
