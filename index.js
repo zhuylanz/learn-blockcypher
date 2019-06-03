@@ -16,6 +16,8 @@ const address2 = {
 	wif: "BrhExjfR8dZqoqTj3tFfgZ6qAGQRBqZ5ru8jUq3mFqS8JeqNp7fW"
 };
 
+const address3 = "C9kxAEoMqqjzcys2t14qZ7wPgbvjZzf9D4";
+
 async function createAddress() {
 	const response = await BTC.createAddress();
 	console.log(response);
@@ -29,7 +31,7 @@ async function getBalance() {
 async function transferCoin() {
 	const result = await BTC.transferCoin(
 		address1.address,
-		address2.address,
+		address3,
 		0.1,
 		address1.private
 	);

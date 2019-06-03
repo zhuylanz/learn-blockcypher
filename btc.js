@@ -76,6 +76,7 @@ module.exports.transferCoin = async (
 ) => {
   const satoshiAmount = convertToSatoshi(btcAmount);
   const txObj = await genTxObj(inputAddress, outputAddress, satoshiAmount);
+  console.log(">> txObj", txObj);
   const signedTxObj = signTx(txObj, inputAddressPrivKey);
 
   return broadcastTx(signedTxObj);
