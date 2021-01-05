@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bitcore-lib": "^8.3.0",
     "satoshi-bitcoin": "^1.0.4",
     "secp256k1": "^3.7.0"
